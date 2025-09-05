@@ -5,7 +5,7 @@ import (
 	r "reflect"
 	"time"
 
-	"github.com/mitranim/sqlb"
+	"github.com/vmedinskiy/sqlb"
 )
 
 func ExampleJel() {

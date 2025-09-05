@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	s "github.com/mitranim/sqlb"
+	s "github.com/vmedinskiy/sqlb"
 )
 
 // Copy of `ExampleStrQ_nested` for package-level docs.

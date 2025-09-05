@@ -1,3 +1,3 @@
-module github.com/mitranim/sqlb
+module github.com/vmedinskiy/sqlb
 
 go 1.18

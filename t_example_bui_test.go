@@ -3,7 +3,7 @@ package sqlb_test
 import (
 	"fmt"
 
-	s "github.com/mitranim/sqlb"
+	s "github.com/vmedinskiy/sqlb"
 )
 
 func ExampleBui() {
