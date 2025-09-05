@@ -1,7 +1,9 @@
 package sqlb
 
 import (
+	"fmt"
 	r "reflect"
+	"strings"
 )
 
 const (
@@ -22,6 +24,18 @@ func Reify(vals ...Expr) (string, []any) {
 	var bui Bui
 	bui.Exprs(vals...)
 	return bui.Reify()
+}
+
+func ReifyInline(vals ...Expr) string {
+	var bui Bui
+	bui.Exprs(vals...)
+	q, params := bui.Reify()
+	for i, param := range params {
+		ph := fmt.Sprintf("$%d", i+1)
+		newS, _ := String(param)
+		q = strings.Replace(q, ph, newS, 1)
+	}
+	return q
 }
 
 /*
