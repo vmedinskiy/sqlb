@@ -33,7 +33,7 @@ func conv(in map[string]any) Dict {
 		case float64:
 			res[k] = v
 		case string:
-			res[k] = StringDQA(v)
+			res[k] = StringSQA(v)
 		case []int:
 			res[k] = convIntSlice(v)
 		case []int64:
