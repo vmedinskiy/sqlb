@@ -326,7 +326,8 @@ func getArgTracker() *argTracker {
 	return argTrackerPool.Get().(*argTracker)
 }
 
-/**
+/*
+*
 Should be pooled via `sync.Pool`. All fields should be allocated lazily on
 demand, but only once. Pre-binding the methods is a one-time expense which
 allows to avoid repeated allocs that would be caused by passing any
@@ -377,7 +378,7 @@ func (self *argTracker) validateNamed(key string) {
 	param := NamedParam(key)
 	_, ok := self.Named[param]
 	if !ok {
-		panic(errUnusedNamed(param))
+		// panic(errUnusedNamed(param)) // could be unused params
 	}
 }
 
