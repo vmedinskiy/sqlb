@@ -12,12 +12,22 @@ func (a Int64A) AppendTo(buf []byte) []byte {
 	return out
 }
 
-type StringQA string
+type StringDQA string // double quoted string
 
-func (sq StringQA) String() string {
+func (sq StringDQA) String() string {
 	return `"` + Str(sq).String() + `"`
 }
 
-func (sq StringQA) AppendTo(buf []byte) []byte {
+func (sq StringDQA) AppendTo(buf []byte) []byte {
+	return Str(sq.String()).AppendTo(buf)
+}
+
+type StringSQA string // single quoted string
+
+func (sq StringSQA) String() string {
+	return "'" + Str(sq).String() + "'"
+}
+
+func (sq StringSQA) AppendTo(buf []byte) []byte {
 	return Str(sq.String()).AppendTo(buf)
 }

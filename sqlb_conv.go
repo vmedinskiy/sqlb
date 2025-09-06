@@ -5,7 +5,7 @@ func convInt64Slice(in []int64) any {
 	for i, v := range in {
 		res[i] = Int64A(v)
 	}
-	return StringQA(res.String())
+	return StringSQA(res.String())
 }
 
 func convIntSlice(in []int) any {
@@ -13,15 +13,15 @@ func convIntSlice(in []int) any {
 	for i, v := range in {
 		res[i] = Int64A(v)
 	}
-	return StringQA(res.String())
+	return StringSQA(res.String())
 }
 
 func convStringSlice(in []string) any {
-	res := make(ArrayAppender[StringQA], len(in))
+	res := make(ArrayAppender[StringDQA], len(in))
 	for i, v := range in {
-		res[i] = StringQA(v)
+		res[i] = StringDQA(v)
 	}
-	return StringQA(res.String())
+	return StringSQA(res.String())
 }
 
 func conv(in map[string]any) Dict {
@@ -33,7 +33,7 @@ func conv(in map[string]any) Dict {
 		case float64:
 			res[k] = v
 		case string:
-			res[k] = StringQA(v)
+			res[k] = StringDQA(v)
 		case []int:
 			res[k] = convIntSlice(v)
 		case []int64:
