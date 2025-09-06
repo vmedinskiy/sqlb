@@ -15,7 +15,7 @@ func (a Int64A) AppendTo(buf []byte) []byte {
 type StringQA string
 
 func (sq StringQA) String() string {
-	return "'" + Str(sq).String() + "'"
+	return `"` + Str(sq).String() + `"`
 }
 
 func (sq StringQA) AppendTo(buf []byte) []byte {

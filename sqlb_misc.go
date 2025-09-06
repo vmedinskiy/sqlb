@@ -26,9 +26,9 @@ func Reify(vals ...Expr) (string, []any) {
 	return bui.Reify()
 }
 
-func ReifyInline(vals ...Expr) string {
+func ReifyInline(q string, arg map[string]any) string {
 	var bui Bui
-	bui.Exprs(vals...)
+	bui.Exprs(StrQ{q, conv(arg)})
 	q, params := bui.Reify()
 	for i, param := range params {
 		ph := fmt.Sprintf("$%d", i+1)
